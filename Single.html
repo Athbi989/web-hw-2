@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap/Font Awesome CDN Version -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="https://kenwheeler.github.io/slick/slick/slick-theme.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Movie Single</title>
+</head>
+<body>
+
+  <!-- Navbar menu (responsive => with mobile ) -->
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <a href="#" class="nav-link">
+          <span class="link-text logo-text">SIDEBAR</span>
+          <svg aria-hidden="true" focusable="false"data-prefix="fad"data-icon="angle-double-right"role="img"xmlns="http://www.w3.org/2000/svg"viewBox="0 0 448 512"class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"><g class="fa-group"><path fill="currentColor"d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"class="fa-secondary"></path><path fill="currentColor"d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"class="fa-primary"></path></g></svg>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="./index.html" class="nav-link">
+            <img src="./img/popcorn.png" width="32px" alt="">
+          <span class="link-text">الرئيسي</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="./MostPopular.html" class="nav-link">
+            <img src="./img/trending.png" width="32px" alt="">
+            <span class="link-text">الأكثر شهره</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="./MostVoted.html" class="nav-link">
+            <img src="./img/star.png" width="32px" alt="">
+            <span class="link-text">الاعلى تقيم</span>
+        </a>
+      </li>
+             
+      <li class="nav-item">
+        <a href="./Genre.html?id=35" class="nav-link">
+            <img src="./img/clown.png" width="32px" alt="">
+            <span class="link-text">كوميدي</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./Genre.html?id=28" class="nav-link">
+            <img src="./img/killer.png" width="32px" alt="">
+            <span class="link-text">اكشن</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="./Genre.html?id=27" class="nav-link">
+            <img src="./img/spider-web.png" width="32px" alt="">
+            <span class="link-text">رعب</span>
+        </a>
+      </li>
+      
+      <li class="nav-item" id="themeButton">
+        <a href="#" class="nav-link">
+            <img src="./img/barmej.svg" alt="">
+            <span class="link-text">Homework #Athbi</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+      <!-- Main Container -->
+      <main>
+
+
+        <!-- Page Loader (From bootstrap) -->
+        <div id="Loader" style="display: none;" class="justify-content-center">
+          <div class="spinner-border" role="status">
+            <span class="sr-only"></span>
+          </div>
+        </div>
+
+        <!-- Regualr Card Desing (Movies card)  -->   
+        <div id="NsContainer" class="ns-container" style="display: none;">
+          <div class="row">
+              <!-- All this div info came from js (automated) -->
+            <div class="movie-big">
+            
+                <!-- Trailier Link goes here -->
+                <div class="movie-img-big">
+                <div style="margin-top: 20px;margin-left: 10px;border-radius: 6px;margin: auto; height: 437px;" class="embed-responsive embed-responsive-4by3">
+                    <iframe class="embed-responsive-item" id="json_youtube" src="https://www.youtube.com/embed/827FNDpQWrQ" allowfullscreen=""></iframe>
+                    </div>
+                 </div>
+
+                 <!-- Basic Movie Info -->
+                <div class="movie-desc">
+                    <span id="json_title">[Movie Undefined]</span>
+                    <ul class="movie-gen">
+                        <li id="json_gen">[Genere]</li>
+                    </ul>
+                </br>
+                <!-- Rating div -->
+                <div id="json_rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                </br>
+                <!-- Movie Overview -->
+                    <div class="movie-gen-summary">
+                        <h1>Overview :</h1>
+                        <p id="json_overview">[Undefined]</p>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>          
+      </main>
+
+
+    <!-- Bootstrap\Jquery JS  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- My version of js -->
+    <script src="./assets/movies.js"></script>
+    <!-- Page Heart -->
+    <script>
+      var Movie_ID = parseURL(window.location.href)["searchObject"]["id"] ;
+
+      //Async function
+      let SingleSection = function() {
+      return new Promise(function(resolve,reject) {
+        getMovie(Movie_ID).then(result => {
+            var single_movie = result ;
+            var poster = "https://image.tmdb.org/t/p/w400" + single_movie["poster_path"];
+            var rating = single_movie["vote_average"] / 2 //Dived by 2 (i want 5 star rating)
+            var date = single_movie["release_date"].split("-"); // 2030-3-3 (i want the year sooo..)
+            var display = single_movie["title"] + " (" + date[0]  + ")";
+            var video =  "https://www.youtube.com/embed/" + single_movie["videos"]["results"][0]["key"] ;
+            var genres = "";
+            //Get genres
+            Object.keys(single_movie["genres"]).forEach(function(key) {
+                 genres += " / " + single_movie["genres"][key]["name"] 
+            });
+            //Get Rating
+            document.getElementById("json_rating").innerHTML = "";
+            for(var i = 0; i <= rating; i++) {
+                document.getElementById("json_rating").innerHTML += '<span class="fa fa-star checked"></span>';
+            }
+            document.getElementById("json_title").innerHTML = display;
+            document.getElementById("json_gen").innerHTML = genres;
+            document.getElementById("json_overview").innerHTML = single_movie["overview"];
+            document.getElementById("json_youtube").src = video;
+
+            resolve();
+          })
+      }); 
+    };
+
+
+    async function MagicHandler () {
+      document.getElementById("Loader").style.display = "flex" ;
+      const LoadDeep = [await SingleSection()]; // this wait for function to finsh 
+      document.getElementById("Loader").style.display = "none" ;   
+      document.getElementById("NsContainer").style.display =" block"
+    }
+
+    if (Movie_ID == "" || Movie_ID === undefined) {
+        alert("Opss, Something went wrong !")
+    } else {
+         MagicHandler () 
+    }
+
+
+    </script>
+  </body>
+</html>
